@@ -29,6 +29,7 @@
 - Sourcetree
 - VSCode
 - Figma
+- Vite Plus
 
 ## How to install (In Order)
 
@@ -55,11 +56,6 @@
 </tr>
 
 <tr>
-<td>PNPM</td>
-<td><a href="https://pnpm.io/installation">https://pnpm.io/installation</a></td>
-</tr>
-
-<tr>
 <td>git</td>
 <td><code>brew install git</code></td>
 </tr>
@@ -67,6 +63,16 @@
 <tr>
 <td>Sourcetree</td>
 <td><a href="https://www.sourcetreeapp.com/">https://www.sourcetreeapp.com/</a></td>
+</tr>
+
+<tr>
+<td>PNPM</td>
+<td><a href="https://pnpm.io/installation">https://pnpm.io/installation</a></td>
+</tr>
+
+<tr>
+<td>Vite+</td>
+<td><code>curl -fsSL https://vite.plus | bash</code></td>
 </tr>
 
 <tr>
@@ -102,8 +108,8 @@ brew install --cask font-fira-code font-fira-code-nerd-font
 </tr>
 
 <tr>
-<td>Powerlevel10k</td>
-<td><a href="https://github.com/romkatv/powerlevel10k">https://github.com/romkatv/powerlevel10k</a></td>
+<td>Starship.rs</td>
+<td><a href="https://starship.rs/">https://starship.rs/</a></td>
 </tr>
 
 </table>
@@ -127,8 +133,14 @@ Create `~/Library/KeyBindings/DefaultKeyBinding.dict` with below content
 }
 ```
 
-### Oh-my-zsh + Powerlevel10k
-Copy `.zshrc`, `.p10k.zsh` to `$HOME`
+### Raycast
+Import `raycast-config.rayconfig`
+
+### Oh-my-zsh
+Copy `.zshrc` to `$HOME`
+
+### Starship.rs
+Copy `.zshrc` to `$HOME/.config/`
 
 ### iTerm2
 Import `Tokyo Night.json`
