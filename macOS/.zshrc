@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -33,11 +33,11 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-zstyle ':omz:update' frequency 7
+# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -78,7 +78,7 @@ zstyle ':omz:update' frequency 7
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(sudo)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,15 +107,17 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias sl="ls"
 alias ks="ls"
+alias "cd.."="cd .."
 
 alias pn="pnpm"
-alias pu="pnpm env use --global"
+# alias pu="pnpm env use --global"
+alias pu="pnpm runtime set -g node"
 alias pls="pnpm env ls"
 alias plsr="pnpm env ls --remote"
 alias vs="pnpm run serve || pnpm run dev"
 alias pns="pnpm start"
-alias pup="pnpm update -g"
-alias esin="pn add -D eslint @oliver139/eslint-config"
+
+alias nuxi="pnpx nuxi@latest"
 
 alias regitignore="git rm -r --cached .;git add ."
 
@@ -125,34 +127,17 @@ alias ncu="pnpx npm-check-updates --format group -i"
 alias ta="pnpx taze -I"
 alias nuxi="pnpx nuxi"
 alias tsx="pnpx tsx"
-alias nip="pnpx @antfu/nip"
 
-# p10k Theme
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# starship.rs
+# Starship.rs
 eval "$(starship init zsh)"
 
-# pnpm end
 # pnpm
-export PNPM_HOME="/Users/olivermak/Library/pnpm"
+export PNPM_HOME="/Users/oliver139/Library/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
 # pnpm end
-
-nosync() {
-  # 如果没有指定文件夹，默认禁止 "node_modules" 和 ".git"
-  [[ $# -eq 0 ]] && set -- "node_modules" ".git"
-  
-  for arg in "$@"; do
-      mkdir -p "$arg"
-      xattr -w 'com.apple.fileprovider.ignore#P' 1 "$arg"
-  done
-}
-# Created by `pipx` on 2026-01-27 04:03:17
-export PATH="$PATH:/Users/olivermak/.local/bin"
-
-# Vite+ bin (https://viteplus.dev)
-. "$HOME/.vite-plus/env"
