@@ -141,7 +141,7 @@ Import `raycast-config.rayconfig`
 Copy `.zshrc` to `$HOME`
 
 ### Starship.rs
-Copy `.zshrc` to `$HOME/.config/`
+Copy `starship.toml` to `$HOME/.config/`
 
 ### iTerm2
 Import `Tokyo Night.json`
