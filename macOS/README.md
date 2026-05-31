@@ -4,7 +4,8 @@
 - [How to install (In Order)](#how-to-install-in-order)
 - [To be config:](#to-be-config)
   - [Home \& End key](#home--end-key)
-  - [Oh-my-zsh + Powerlevel10k](#oh-my-zsh--powerlevel10k)
+  - [Oh-my-zsh](#oh-my-zsh)
+  - [Starship.rs](#starshiprs)
   - [iTerm2](#iterm2)
 
 
@@ -15,7 +16,7 @@
 - Balance Lock
 - iTerm2
 - Oh-my-zsh  
-- Powerlevel10k
+- Starship.rs
 
 ### Package manager
 - Homebrew
